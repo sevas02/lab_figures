@@ -24,25 +24,15 @@ double right_triangle_prism::volume() {
 
 //вывод параметров призмы
 void right_triangle_prism::print() {
-	std::cout << "\n\nТреугольник в основании:\n";
-	/*std::cout << "\nГипотенуза: " << std::fixed
-		<< std::setprecision(3) << hypotenuse;
-	std::cout << "\nПервый катет 'a': " << std::fixed
-		<< std::setprecision(3) << leg_a;
-	std::cout << "\nВторой катет 'b': " << std::fixed
-		<< std::setprecision(3) << leg_b;
-	std::cout << "\nУгол 'c': " << std::fixed
-		<< std::setprecision(3) << angle_c;
-	std::cout << "\nУгол 'a': " << std::fixed
-		<< std::setprecision(3) << angle_a;
-	std::cout << "\nУгол 'b': " << std::fixed
-		<< std::setprecision(3) << angle_b;*/
+	SetColor(3, 0);
+	std::cout << "\nPrism\n";
+	SetColor(7, 0);
+	std::cout << "Triangle at the base:\n";
 	right_triangle::print();
-	std::cout << "\n";
-	std::cout << "\nВысота призмы: " << std::fixed
+	std::cout << "\nHeight: " << std::fixed
 		<< std::setprecision(3) << height;
-	std::cout << "\nПлощадь пов-ти призмы: " << square();
-	std::cout << "\nОбъём призмы: " << volume();
+	std::cout << "\nPrism surface area: " << square();
+	std::cout << "\nPrism volume: " << volume();
 }
 
 //деструктор

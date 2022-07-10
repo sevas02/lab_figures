@@ -2,6 +2,7 @@
 #define RIGHT_TRIANGLE 
 
 #include "Figure.h"
+#include "text_color.h"
 
 //прямоугольный треугольник
 class right_triangle : public figure {
@@ -21,6 +22,9 @@ public:
 	//нахождение площади
 	double square();
 
+	//нахождение минимального угла
+	double minimal_angle() const;
+
 	//деструктор
 	~right_triangle();
 
@@ -31,6 +35,11 @@ public:
 	double get_angle_a() { return angle_a; }
 	double get_angle_b() { return angle_b; }
 	double get_angle_c() { return angle_c; }
+
+	//перегрузка операций
+	void operator =(const right_triangle& tr);
+	bool operator <(const right_triangle& tr);
+
 protected:
 	//катеты
 	double leg_a;

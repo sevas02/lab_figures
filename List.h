@@ -76,7 +76,7 @@ list<T>::~list() {
 template <class T>
 node<T>* list<T>::create_node(T info) {
 	node<T>* el = new node<T>{ info };
-	el->_value = info;
+	el->val = info;
 	el->next = 0;
 	el->prev = 0;
 	return el;
@@ -184,6 +184,6 @@ T list<T>::find_value(int idx) {
 		elem = elem->next;
 		idx--;
 	}
-	return elem->_value;
+	return elem->val;
 }
 #endif
