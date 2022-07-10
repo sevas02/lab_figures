@@ -12,11 +12,11 @@ int main() {
 	SetConsoleOutputCP(1251);
 	std::ifstream fin("input.txt");
 	std::ofstream fout("output.txt");
-	// 0 - треугольник, 1 - призма
+	// 0 - С‚СЂРµСѓРіРѕР»СЊРЅРёРє, 1 - РїСЂРёР·РјР°
 	int type;
 	list<figure*> figures;
 	
-	//считывание данных из файла
+	//СЃС‡РёС‚С‹РІР°РЅРёРµ РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р°
 	while (!fin.eof()) {
 		fin >> type;
 		if (type == 0) {
@@ -45,22 +45,22 @@ int main() {
 			std::cout << "Unrecognized type of figure!\n";
 	}
 
-	//вывод всех фигур из списка
+	//РІС‹РІРѕРґ РІСЃРµС… С„РёРіСѓСЂ РёР· СЃРїРёСЃРєР°
 	for (int i = 0; i < figures.get_size(); i++) {
 		figures.find_value(i)->print();
 		std::cout << std::endl;
 	}
 	right_triangle* min_triangle = new right_triangle();
 	double avg_value_pr = 0;
-	//третья функция
+	//С‚СЂРµС‚СЊСЏ С„СѓРЅРєС†РёСЏ
 	for (int i = 0; i < figures.get_size(); i++) {
-		//счетчик призм
+		//СЃС‡РµС‚С‡РёРє РїСЂРёР·Рј
 		int count_pr = 0;
-		//общий объём призм
+		//РѕР±С‰РёР№ РѕР±СЉС‘Рј РїСЂРёР·Рј
 		double general_volume_pr = 0;
-		//треугольник с минимальным углом
+		//С‚СЂРµСѓРіРѕР»СЊРЅРёРє СЃ РјРёРЅРёРјР°Р»СЊРЅС‹Рј СѓРіР»РѕРј
 	//	right_triangle* min_triangle = new right_triangle();
-		//переменная для инициализации миним-ого треугольника
+		//РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РёРЅРёС†РёР°Р»РёР·Р°С†РёРё РјРёРЅРёРј-РѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 		bool first_tr = true;
 		if (typeid(*(figures.find_value(i))) == typeid(right_triangle)) {
 			if (first_tr)
@@ -71,7 +71,7 @@ int main() {
 		else if (typeid(*(figures.find_value(i))) == typeid(right_triangle_prism)) {
 			count_pr++;
 			general_volume_pr += dynamic_cast<right_triangle_prism*>(figures.find_value(i))->volume();
-			//средний объём призм сраных
+			//СЃСЂРµРґРЅРёР№ РѕР±СЉС‘Рј РїСЂРёР·Рј СЃСЂР°РЅС‹С…
 			avg_value_pr = general_volume_pr / count_pr;
 		}
 		

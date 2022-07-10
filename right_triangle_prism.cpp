@@ -1,6 +1,6 @@
 #include "right_triangle_prism.h"
 
-//конструктор с параметром для призмы, передаётся треуг-ник в основании и высота призмы
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј РґР»СЏ РїСЂРёР·РјС‹, РїРµСЂРµРґР°С‘С‚СЃСЏ С‚СЂРµСѓРі-РЅРёРє РІ РѕСЃРЅРѕРІР°РЅРёРё Рё РІС‹СЃРѕС‚Р° РїСЂРёР·РјС‹
 right_triangle_prism::right_triangle_prism(right_triangle triangle, double h) {
 	height = h;
 	leg_a = triangle.get_leg_a();
@@ -11,18 +11,18 @@ right_triangle_prism::right_triangle_prism(right_triangle triangle, double h) {
 	angle_c = triangle.get_angle_c();
 }
 
-//вычисление площади пов-ти призмы
+//РІС‹С‡РёСЃР»РµРЅРёРµ РїР»РѕС‰Р°РґРё РїРѕРІ-С‚Рё РїСЂРёР·РјС‹
 double right_triangle_prism::square() {
 	double s_bok = right_triangle::perimeter() * height;
 	return s_bok + (2 * 0.5 * leg_a * leg_b);;
 }
 
-//вычисление объёма призмы
+//РІС‹С‡РёСЃР»РµРЅРёРµ РѕР±СЉС‘РјР° РїСЂРёР·РјС‹
 double right_triangle_prism::volume() {
 	return right_triangle::square() * height;
 }
 
-//вывод параметров призмы
+//РІС‹РІРѕРґ РїР°СЂР°РјРµС‚СЂРѕРІ РїСЂРёР·РјС‹
 void right_triangle_prism::print() {
 	SetColor(3, 0);
 	std::cout << "\nPrism\n";
@@ -35,7 +35,7 @@ void right_triangle_prism::print() {
 	std::cout << "\nPrism volume: " << volume();
 }
 
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 right_triangle_prism::~right_triangle_prism() {
 	leg_a = 0;
 	leg_b = 0;

@@ -4,31 +4,31 @@
 #include "Figure.h"
 #include "text_color.h"
 
-//прямоугольный треугольник
+//РїСЂСЏРјРѕСѓРіРѕР»СЊРЅС‹Р№ С‚СЂРµСѓРіРѕР»СЊРЅРёРє
 class right_triangle : public figure {
 public:
-	//конструктор по умолчанию
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	right_triangle();
 
-	//конструктор треугольника через два катета
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° С‡РµСЂРµР· РґРІР° РєР°С‚РµС‚Р°
 	right_triangle(double a, double b, double angl);
 
-	//печать параметров прямоугольного треугольника
+	//РїРµС‡Р°С‚СЊ РїР°СЂР°РјРµС‚СЂРѕРІ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 	void print() override;
 
-	//нахождение периметра
+	//РЅР°С…РѕР¶РґРµРЅРёРµ РїРµСЂРёРјРµС‚СЂР°
 	double perimeter();
 
-	//нахождение площади
+	//РЅР°С…РѕР¶РґРµРЅРёРµ РїР»РѕС‰Р°РґРё
 	double square();
 
-	//нахождение минимального угла
+	//РЅР°С…РѕР¶РґРµРЅРёРµ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СѓРіР»Р°
 	double minimal_angle() const;
 
-	//деструктор
+	//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 	~right_triangle();
 
-	//геттеры
+	//РіРµС‚С‚РµСЂС‹
 	double get_leg_a() { return leg_a; }
 	double get_leg_b() { return leg_b; }
 	double get_hypotenuse() { return hypotenuse; }
@@ -36,17 +36,17 @@ public:
 	double get_angle_b() { return angle_b; }
 	double get_angle_c() { return angle_c; }
 
-	//перегрузка операций
+	//РїРµСЂРµРіСЂСѓР·РєР° РѕРїРµСЂР°С†РёР№
 	void operator =(const right_triangle& tr);
 	bool operator <(const right_triangle& tr);
 
 protected:
-	//катеты
+	//РєР°С‚РµС‚С‹
 	double leg_a;
 	double leg_b;
-	//гипотенуза
+	//РіРёРїРѕС‚РµРЅСѓР·Р°
 	double hypotenuse;
-	//углы
+	//СѓРіР»С‹
 	double angle_a;
 	double angle_b;
 	double angle_c;

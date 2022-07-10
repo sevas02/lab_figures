@@ -4,7 +4,7 @@
 #include <iostream>
 #include <exception>
 
-//класс узла
+//РєР»Р°СЃСЃ СѓР·Р»Р°
 template <class T>
 class node {
 private:
@@ -13,17 +13,17 @@ private:
 	node<T>* prev;
 	node(T value) : val(value), next(0), prev(0) {;}
 public:
-	//геттеры
+	//РіРµС‚С‚РµСЂС‹
 	node<T>* get_next() { return next; }
 	T get_value() { return val; }
-	//сеттеры
+	//СЃРµС‚С‚РµСЂС‹
 	void set_value(T value) { val = value; }
 
 	template <class T1> 
 	friend class list;
 };
 
-//класс списка
+//РєР»Р°СЃСЃ СЃРїРёСЃРєР°
 template <class T>
 class list {
 private:
@@ -31,32 +31,32 @@ private:
 	node<T>* last;
 	int size;
 public:
-	//конструктор по умолчанию
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	list() : first(0), last(0), size(0) {;}
-	//деструктор
+	//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 	~list();
-	//геттеры
+	//РіРµС‚С‚РµСЂС‹
 	node<T>* get_first() { return first; }
 	node<T>* get_last() { return last; }
 	int get_size() { return size; }
 
-	//создание узла
+	//СЃРѕР·РґР°РЅРёРµ СѓР·Р»Р°
 	node<T>* create_node(T info);
-	//вставка в начало списка
+	//РІСЃС‚Р°РІРєР° РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
 	void push_front(T value);
-	//вставка в конец списка
+	//РІСЃС‚Р°РІРєР° РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
 	void push_back(T value);
-	//удаление элемента
+	//СѓРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р°
 	bool delete_element(int);
-	//удаление последнего элемента
+	//СѓРґР°Р»РµРЅРёРµ РїРѕСЃР»РµРґРЅРµРіРѕ СЌР»РµРјРµРЅС‚Р°
 	bool pop_back();
-	//удаление начала
+	//СѓРґР°Р»РµРЅРёРµ РЅР°С‡Р°Р»Р°
 	bool pop_front();
-	//функция поиска
+	//С„СѓРЅРєС†РёСЏ РїРѕРёСЃРєР°
 	T find_value(int idx);
 };
 
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 template <class T>
 list<T>::~list() {
 	if (first == 0)
@@ -72,7 +72,7 @@ list<T>::~list() {
 	first = 0;
 }
 
-//создание узла
+//СЃРѕР·РґР°РЅРёРµ СѓР·Р»Р°
 template <class T>
 node<T>* list<T>::create_node(T info) {
 	node<T>* el = new node<T>{ info };
@@ -82,7 +82,7 @@ node<T>* list<T>::create_node(T info) {
 	return el;
 }
 
-//вставка в начало списка
+//РІСЃС‚Р°РІРєР° РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
 template <class T>
 void list<T>::push_front(T value) {
 	node<T>* new_el = create_node(value);
@@ -104,7 +104,7 @@ void list<T>::push_front(T value) {
 	size++;
 }
 
-//вставка в конец списка
+//РІСЃС‚Р°РІРєР° РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
 template <class T>
 void list<T>::push_back(T value) {
 	node<T>* new_el = create_node(value);
@@ -126,7 +126,7 @@ void list<T>::push_back(T value) {
 	size++;
 }
 
-//удаление из конца списка
+//СѓРґР°Р»РµРЅРёРµ РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР°
 template <class T>
 bool list<T>::pop_back() {
 	if (size == 0)
@@ -138,7 +138,7 @@ bool list<T>::pop_back() {
 	return 1;
 }
 
-//удаление из начала списка
+//СѓРґР°Р»РµРЅРёРµ РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР°
 template <class T>
 bool list<T>::pop_front() {
 	if (size == 0)
@@ -150,7 +150,7 @@ bool list<T>::pop_front() {
 	return 1;
 }
 
-//удаление узла
+//СѓРґР°Р»РµРЅРёРµ СѓР·Р»Р°
 template <class T>
 bool list<T>::delete_element(int idx) {
 	if (idx > size)
@@ -172,9 +172,9 @@ bool list<T>::delete_element(int idx) {
 	return 1;
 }
 
-//поиск элемента
-//ВНИМАНИЕ ЕСЛИ ИНДЕКС БОЛЬШЕ РАЗМЕРА,
-//КИДАЕТСЯ ИСКЛЮЧЕНИЕ, НАДО ЛОВИТЬ
+//РїРѕРёСЃРє СЌР»РµРјРµРЅС‚Р°
+//Р’РќРРњРђРќРР• Р•РЎР›Р РРќР”Р•РљРЎ Р‘РћР›Р¬РЁР• Р РђР—РњР•Р Рђ,
+//РљРР”РђР•РўРЎРЇ РРЎРљР›Р®Р§Р•РќРР•, РќРђР”Рћ Р›РћР’РРўР¬
 template <class T>
 T list<T>::find_value(int idx) {
 	if (idx > size)

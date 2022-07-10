@@ -2,7 +2,7 @@
 #include <string>
 #define PI 3.14159265   
 
-//конструктор по умолчанию
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 right_triangle::right_triangle() : angle_c(90) {
 	leg_a = 0;
 	leg_b = 0;
@@ -11,7 +11,7 @@ right_triangle::right_triangle() : angle_c(90) {
 	angle_a = 0;
 }
 
-//конструктор треугольника через два катета
+//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° С‡РµСЂРµР· РґРІР° РєР°С‚РµС‚Р°
 right_triangle::right_triangle(double a, double b, double angl) {
 	if (angl > 90)
 		throw std::string("Error! The angle value exceeds the allowable!\n");
@@ -36,10 +36,10 @@ right_triangle::right_triangle(double a, double b, double angl) {
 	if (leg_a + leg_b < hypotenuse
 		|| leg_a + hypotenuse < leg_b
 		|| leg_b + hypotenuse < leg_a)
-		throw std::string("Error! Еriangle inequality violated!\n");
+		throw std::string("Error! Р•riangle inequality violated!\n");
 }
 
-//печать параметров прямоугольного треугольника
+//РїРµС‡Р°С‚СЊ РїР°СЂР°РјРµС‚СЂРѕРІ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРѕРіРѕ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°
 void right_triangle::print() {
 	SetColor(14, 0);
 	std::cout << "Triangle\n";
@@ -61,17 +61,17 @@ void right_triangle::print() {
 	std::cout << "\nTriangle square: " << square() << "\n";
 }
 
-//нахождение периметра
+//РЅР°С…РѕР¶РґРµРЅРёРµ РїРµСЂРёРјРµС‚СЂР°
 double right_triangle::perimeter() {
 	return leg_a + leg_b + hypotenuse;
 }
 
-//нахождение площади
+//РЅР°С…РѕР¶РґРµРЅРёРµ РїР»РѕС‰Р°РґРё
 double right_triangle::square() {
 	return 0.5 * leg_a * leg_b;
 }
 
-//нахождение минимального угла
+//РЅР°С…РѕР¶РґРµРЅРёРµ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СѓРіР»Р°
 double right_triangle::minimal_angle() const {
 	if (angle_a > angle_b)
 		return angle_b;
@@ -79,7 +79,7 @@ double right_triangle::minimal_angle() const {
 		return angle_a;
 }
 
-//деструктор
+//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 right_triangle::~right_triangle() {
 	leg_a = 0;
 	leg_b = 0;
